@@ -8,22 +8,26 @@ export default function TextForm(props){
     const handleUpClick=()=>{
         let newText=text.toUpperCase();
         setText(newText);
+        props.showAlert("Text has been converted to UPPERCASE","success");
     }
 
     const handleLoClick=()=>{
         let newText=text.toLowerCase();
         setText(newText);
+        props.showAlert("Text has been converted to lowercase","success");
     }
 
     const handleClearClick=()=>{
         let newText="";
         setText(newText);
+        props.showAlert("text has been cleared","success");
     }
 
     const handleCopyText=()=>{
         let text=document.getElementById('myBox');
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text has been copied to clipboard","success");
     }
 
     const handleReClick = () => {
@@ -34,6 +38,7 @@ export default function TextForm(props){
         let newText = joinedWords
     
         setText(newText);
+        props.showAlert("Text has been reversed","success");
       };
 
     const [text,setText]=useState('');
