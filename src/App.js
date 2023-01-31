@@ -3,8 +3,14 @@ import './App.css';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-//import About from './components/About';
+import About from './components/About';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 function App() {
 
@@ -33,14 +39,17 @@ function App() {
     }
   }
   return (
-    <>
+    <><Router>
       <Navbar title="KanavUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert}/>
       <div className='container my-3' >
-          <TextForm mode={mode} showAlert={showAlert} heading="Enter the text to analyze below"/>
-          {/*<About/>*/}
+      <Switch>
+      <Route exact path="/" ><TextForm mode={mode} showAlert={showAlert} heading="Enter the text to analyze below"/></Route>
+      <Route exact path="/about" ><About/></Route>
+      </Switch>
       </div>
-    </>
+      </Router>
+      </>
   );
 }
 
