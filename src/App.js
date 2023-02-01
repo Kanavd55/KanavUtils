@@ -9,7 +9,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
   } from "react-router-dom";
 
 function App() {
@@ -45,7 +44,7 @@ function App() {
       <div className='container my-3' >
       <Switch>
       <Route exact path="/" ><TextForm mode={mode} showAlert={showAlert} heading="Enter the text to analyze below"/></Route>
-      <Route exact path="/about" ><About/></Route>
+      <Route exact path="/about" ><About mode={mode} /></Route>
       </Switch>
       </div>
       </Router>

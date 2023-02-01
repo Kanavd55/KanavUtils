@@ -15,10 +15,10 @@ export default function Navbar(props){
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link style={{textDecoration:'none',marginLeft:5,color:'black'}} className="nav-a  mx-2" aria-current="page" to="/" relative='path'>Home</Link>
+          <Link style={{textDecoration:'none',marginLeft:5,color:`${props.mode==='light'?'black':'white'}`}} className="nav-a  mx-2" aria-current="page" to="/" relative='path'>Home</Link>
         </li>
         <li className="nav-item">
-          <Link style={{textDecoration:'none',marginLeft:5,color:'black'}} className="nav-a mx-2" to="/about" relative='path'>About</Link>
+          <Link style={{textDecoration:'none',marginLeft:5,color:`${props.mode==='light'?'black':'white'}`}} className="nav-a mx-2" to="/about" relative='path'>About</Link>
         </li>
       </ul>
       <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
